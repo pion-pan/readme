@@ -1,0 +1,15 @@
+@EnableEurekaServer：启动一个服务注册中心提供给其他应用进行对话
+@EnableDiscoveryClient：该注解能激活Eureka中的DiscoveryClient实现
+@ComponentScan(basePackages={"com.pan.idService.web"})：
+	spring boot默认扫描启动类所在的包及其子包下的文件，该注解用于配置扫描的包路径
+
+application.properties属性说明：
+	eureka.client.register-with-eureka=false
+	eureka.client.fetch-registry=false
+		注册中心默认会将自己也作为一个客户端进行注册，以上配置用于禁止该操作
+	eureka.client.serviceUrl.defaultZone=http://localhost:1111/eureka/
+		配置注册中心
+	spring.application.name=id-service
+		配置服务名
+	server.port=2222
+		配置服务端口号
